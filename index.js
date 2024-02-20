@@ -1,7 +1,7 @@
 async function fetchData(){
     try{
 
-        const fruitName = document.getElementById("name").value.toLowerCase();
+        const fruitName = document.getElementById("name");
         const response = await fetch(`https://www.fruityvice.com/api/fruit/${fruitName}`);
 
         if(!response.ok){

@@ -1,8 +1,8 @@
 async function fetchData(){
     try{
 
-        const fruitName = document.getElementById("name").value;
-        const response = await fetch(`https://www.fruityvice.com/api/fruit/${fruitName}`);
+        const wordName = document.getElementById("name").value;
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordName}`);
 
         if(!response.ok){
             throw new Error("Could not fetch resource");
@@ -10,16 +10,12 @@ async function fetchData(){
 
         const data = await response.json();
       
-        const family = data.family;
-        const order = data.order;
-        const genus = data.genus;
+        const word = responseData[0].word;
 
         const resultContainer = document.getElementById("result");
         resultContainer.innerHTML = `
             <h2>Fruit Information</h2>
-            <p><strong>Family:</strong> ${family}</p>
-            <p><strong>Order:</strong> ${order}</p>
-            <p><strong>Genus:</strong> ${genus}</p>
+            <p><strong>Family:</strong> ${word}</p>
         `;
     }
     catch(error){

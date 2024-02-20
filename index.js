@@ -17,7 +17,6 @@ async function fetchData(){
         const resultContainer = document.getElementById("result");
         resultContainer.innerHTML = `
             <h2>Fruit Information</h2>
-            <p style="color: red;">Name: ${fruitName}</p>
             <p><strong>Family:</strong> ${family}</p>
             <p><strong>Order:</strong> ${order}</p>
             <p><strong>Genus:</strong> ${genus}</p>

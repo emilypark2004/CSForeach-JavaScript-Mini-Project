@@ -9,14 +9,25 @@ async function fetchData(){
         }
 
         const data = await response.json();
-      
-        const word = responseData[0].word;
+        
+        const phonetics = data[0].phonetics;
 
-        const resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = `
-            <h2>Fruit Information</h2>
-            <p><strong>Family:</strong> ${word}</p>
-        `;
+        const phoneticsContainer = document.getElementById('phonetics');
+        phoneticsContainer.innerHTML = '';
+
+        phonetics.forEach(phonetic => {
+            const text = phonetic.text;
+            const audio = phonetic.audio;
+        
+            const phoneticElement = document.createElement('div');
+            phoneticElement.innerHTML = `
+                <p>Text: ${text}</p>
+                <p>Audio: <a href="${audio}" target="_blank">Listen</a></p>
+            `;
+            phoneticsContainer.appendChild(phoneticElement);
+        });
+
+        document.getElementById('word').textContent = `Word: ${word}`;
     }
     catch(error){
         console.error(error);

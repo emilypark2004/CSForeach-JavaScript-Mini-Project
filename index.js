@@ -26,7 +26,7 @@ async function fetchData(){
             `;
             phoneticsContainer.appendChild(phoneticElement);
         });
-
+        
         document.getElementById('word').textContent = `Word: ${word}`;
     }
     catch(error){

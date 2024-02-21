@@ -7,7 +7,7 @@ async function fetchData(){
         if(!response.ok){
             throw new Error("Could not fetch resource");
         }
-
+        
         const data = await response.json();
         
         const meanings = data[0].meanings;

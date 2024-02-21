@@ -19,23 +19,3 @@ button {
 body {
     background-color: #dcd0ff;
 }
-
-#meanings {
-  margin-top: 20px;
-}
-
-.meaning {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.part-of-speech {
-    font-weight: bold;
-    color: brown;
-}
-
-.definition {
-    margin-left: 20px;
-    color: brown;
-}

@@ -10,23 +10,24 @@ async function fetchData(){
 
         const data = await response.json();
         
-        const phonetics = data[0].phonetics;
+        const meanings = data[0].meanings;
 
-        const phoneticsContainer = document.getElementById('phonetics');
-        phoneticsContainer.innerHTML = '';
+        const meaningsContainer = document.getElementById('meanings');
+        meaningsContainer.innerHTML = '';
 
-        phonetics.forEach(phonetic => {
-            const text = phonetic.text;
-            const audio = phonetic.audio;
-        
-            const phoneticElement = document.createElement('div');
-            phoneticElement.innerHTML = `
-                <p>Text: ${text}</p>
-                <p>Audio: <a href="${audio}" target="_blank">Listen</a></p>
+        meanings.forEach(meaning => {
+            const partOfSpeech = meaning.partOfSpeech;
+            const definitions = meaning.definitions;
+
+            const meaningElement = document.createElement('div');
+            meaningElement.innerHTML = `
+                <h3>${partOfSpeech}</h3>
+                <ul>
+                    ${definitions.map(definition => `<li>${definition.definition}</li>`).join('')}
+                </ul>
             `;
-            phoneticsContainer.appendChild(phoneticElement);
-        });
-        
+            meaningsContainer.appendChild(meaningElement);
+        });       
         document.getElementById('word').textContent = `Word: ${word}`;
     }
     catch(error){

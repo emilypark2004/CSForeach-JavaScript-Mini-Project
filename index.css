@@ -23,7 +23,19 @@ body {
 p {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
-    text-align: center;
+    color: #808080;
     margin-bottom: 20px;
+}
+
+.meaning {
+  margin-bottom: 10px;
+}
+
+.part-of-speech {
+  font-weight: bold;
+  color: blue; /* Example color */
+}
+
+.definition {
+  margin-left: 20px;
 }
